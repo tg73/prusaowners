@@ -500,6 +500,8 @@ Need to change E steps to account for gear ratio (3.5:1) M92 E980
 
 Save settings M500
 
+**Since 3.5.0, the M91x gcodes below are no longer enabled on stock firmware. Only M907 is supported, which allows current to be set but not reported, and there's no equivalent of M910. Uncomment the line `#define TMC2130_SERVICE_CODES_M910_M918` in `Configuration_prusa.h` to re-enable.**
+
 Change motor current, depending on your motor, if it gets too hot using stock settings: I found that I needed to reduce the default E motor current for my smaller motor. If it’s not getting too hot, leave it default (30). Example: M911 E24 ; set holding current lower M912 E24 ; set running current lower M910 ; commit new currents until power cycle
 
 INFO: M910 - Reset and initialize the TMC2130 chips.
